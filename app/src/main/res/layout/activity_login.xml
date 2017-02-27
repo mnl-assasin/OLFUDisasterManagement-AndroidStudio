@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.olfu.olfudisasterapp.activity.LoginActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="32dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_logo" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilUsername"
+        style="@style/TextInputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <com.olfu.olfudisasterapp.widgets.EditTextRoman
+            android:id="@+id/etUsername"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilPassword"
+        style="@style/TextInputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
+
+        <com.olfu.olfudisasterapp.widgets.EditTextRoman
+            android:id="@+id/etPassword"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <com.olfu.olfudisasterapp.widgets.ButtonMed
+        android:id="@+id/btnLogin"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_default_selector"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@drawable/button_text_default_selector" />
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
+
+        <com.olfu.olfudisasterapp.widgets.TextViewLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:text="@string/are_you_new" />
+
+        <com.olfu.olfudisasterapp.widgets.TextViewMed
+            android:id="@+id/tvSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_here"
+            android:textColor="@color/textLink" />
+
+    </LinearLayout>
+</LinearLayout>

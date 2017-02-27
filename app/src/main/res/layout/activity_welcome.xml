@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutWelcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.olfu.olfudisasterapp.widgets.ButtonMed
+        android:id="@+id/btnNext"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/marginBottom"
+        android:background="@drawable/btn_round_white"
+        android:text="@string/wc_signup"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryText" />
+
+
+    <com.olfu.olfudisasterapp.widgets.ButtonMed
+        android:id="@+id/btnLogin"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/btn_round_green"
+        android:shadowColor="@color/shadow"
+        android:shadowRadius="1"
+        android:text="@string/wc_login"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText" />
+</RelativeLayout>

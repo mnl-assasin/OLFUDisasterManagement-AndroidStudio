@@ -1,0 +1,150 @@
+<resources>
+    <string name="app_name">OLFU Disaster App</string>
+
+    <string name="wc_signup">I\'m a new user</string>
+    <string name="wc_login">I have an account</string>
+
+    <string name="next">Next</string>
+    <string name="decline">Decline</string>
+    <string name="agree">Agree</string>
+    <string name="close">Close</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="account_type">Account type</string>
+    <string name="create_account">Create your account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">E-mail Address</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="stud_num">Student Number</string>
+    <string name="course">Course</string>
+    <string name="signup">Sign up</string>
+    <string name="contact_num">Contact Number</string>
+
+    <string name="login">Log in</string>
+    <string name="account_exists">Already have an account? </string>
+    <string name="login_here"> Login here</string>
+
+    <string name="account_info">Account Information</string>
+
+    <string name="are_you_new">Are you new?</string>
+    <string name="signup_here">Sign up here</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ex risus,
+        bibendum non purus eget, convallis feugiat libero. Praesent ut egestas ex.
+        Curabitur placerat malesuada odio et cursus. Suspendisse potenti.
+        Curabitur in leo at lacus placerat rutrum a eu sapien. Nulla eu consectetur odio.
+        Curabitur tellus nunc, pretium et vehicula a, euismod at nunc.</string>
+
+    <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vivamus id augue at dui condimentum elementum. Phasellus et nibh id dolor dictum
+        posuere tristique sit amet diam. Maecenas egestas enim volutpat tellus bibendum placerat.
+        Aliquam posuere semper tincidunt. Sed ut odio malesuada, efficitur nibh nec, vestibulum purus.
+        Praesent laoreet neque eros, quis euismod quam rutrum sed. Maecenas in tincidunt metus.
+        Duis hendrerit neque vitae mollis sodales. Vestibulum euismod orci leo,
+        a condimentum enim condimentum vitae.\n\nNulla ut ligula non lorem imperdiet varius.
+        Suspendisse mattis rhoncus vehicula. Quisque ligula libero, efficitur ac accumsan eget,
+        vulputate sed metus. Phasellus rhoncus, nunc ac sollicitudin placerat, orci mauris porttitor nulla,
+        vel gravida purus justo nec sapien. Cras euismod ipsum vel libero tempus, sit amet posuere tortor interdum.
+        Morbi mollis consectetur magna vitae volutpat. Sed interdum quis sapien sed tristique.
+        Duis et mi vitae augue sagittis elementum. Mauris porta eros id gravida dapibus.
+        Ut eget lacus iaculis, sollicitudin turpis ac, rutrum turpis. Sed mauris tellus,
+        luctus a dignissim nec, ornare rhoncus tellus. Integer posuere nulla nec dolor auctor,
+        a ornare sapien semper. Duis nibh odio, dignissim quis faucibus sed, placerat ut urna.\n\nFusce leo neque,
+        convallis sed venenatis semper, sodales id elit. Nulla a felis in nisl suscipit tincidunt sit amet non metus.
+        Praesent ligula sapien, feugiat eget pellentesque efficitur, maximus sed dolor.
+        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+        Nullam in urna a quam sollicitudin condimentum ut a eros.
+        Donec sodales feugiat libero, ut placerat arcu tincidunt sed.
+        Praesent sit amet ipsum massa. Duis nec elit id mauris laoreet bibendum eget vel nisi.
+        Nulla facilisi. Nulla facilisi.</string>
+
+
+    <string-array name="account_type">
+
+        <item>Parent</item>
+        <item>Student</item>
+    </string-array>
+
+    <string-array name="course">
+        <item>BS in Accountancy/ Accounting Technology</item>
+        <item>BS in Biology</item>
+        <item>BS in Business Administration Major in Banking and Finance</item>
+        <item>BS in Business Administration Major in Business Management</item>
+        <item>BS in Business Administration Major in Marketing Management</item>
+        <item>BS in Computer Science</item>
+        <item>BS in Criminology</item>
+        <item>BS in Entertainment and Multimedia Computing</item>
+        <item>BS in Information Technology</item>
+        <item>BS in Hotel and Restaurant Management</item>
+        <item>BS in Marine Engineering</item>
+        <item>BS in Medical Laboratory Science (MedTech)</item>
+        <item>BS in Midwifery</item>
+        <item>BS in Nursing</item>
+        <item>BS in Nutrition and Dietetics</item>
+        <item>BS in Pharmacy</item>
+        <item>BS in Physical Therapy</item>
+        <item>BS in Psychology</item>
+        <item>BS in Respiratory Therapy</item>
+        <item>BS in Travel Management</item>
+        <item>Bachelor in Elementary Education Major in Early Education</item>
+        <item>Bachelor in Secondary Education Major in English</item>
+    </string-array>
+
+    <string-array name="buildings">
+        <item>AMS Building</item>
+        <item>BED Building</item>
+        <item>CAS Building</item>
+        <item>GSB Building</item>
+        <item>KCB Building</item>
+        <item>MB Building</item>
+        <item>PJP Building</item>
+        <item>PPB Building</item>
+        <item>SBH Building</item>
+        <item>SJB Building</item>
+        <item>SLH Building</item>
+        <item>SMDP Building</item>
+    </string-array>
+
+    <string name="menu_annoucement">Announcement</string>
+    <string name="menu_precautionary">Disaster Precautionary</string>
+    <string name="menu_hotline">Help Hotline</string>
+    <string name="menu_safe_zone">Safe Zone</string>
+    <string name="menu_account_info">Account Information</string>
+
+    <string name="precaution_headline">What Should I Do Before, During, And After An Earthquake?</string>
+    <string name="before_heading">What to do Before an Earthquake</string>
+
+    <string name="before">• Make sure you have a fire extinguisher, first aid kit, a battery powered radio, a flashlight and extra batteries at home.</string>
+    <string name="before2">• Learn first aid.</string>
+    <string name="before3">• Learn how to turn off the gas, water and electricity.</string>
+    <string name="before4">• Make up a plan of where to meet your family after an earthquake.</string>
+    <string name="before5">• Don\'t leave heavy object on shelves</string>
+    <string name="before6">• Anchor heavy furniture, cupboards, and appliances to the walls or floor.</string>
+    <string name="before7">• Learn the earthquake plan at your school or workplace</string>
+
+    <string name="during_heading">What to do During an Earthquake</string>
+    <string name="during">• Stay calm! If you\'re indoors, stay inside. If you\'re outside, stay outside.</string>
+    <string name="during2">• If you\'re indoors, stand against a wall near the center of the building, stand in a doorway, or crawl under heavy furniture (a desk or table). Stay away from windows and outside doors.</string>
+    <string name="during3">• If you\'re outdoors, stay in the open away from power lines or anything that might fall. Stay away from buildings (stuff might fall off the building or the building could fall on you).</string>
+    <string name="during4">• Don\'t use matches, candles, or any flame. Broken gas lines and fire don\'t mix</string>
+    <string name="during5">• If you\'re in car, stop the car and stay inside the car until the earthquake stops.</string>
+    <string name="during6">• Don\'t use the elevators (they\'ll probably get stuck anyway)</string>
+
+    <string name="after_heading">What to do After an Earthquake</string>
+    <string name="after">• Check yourself and others for injuries. Provide first aid for anyone who needs it.</string>
+    <string name="after2">• Check water, gas, and electric lines for damage. If any are damaged, shut off the valves. Check for the smell of gas. If you smell it, open all the windows and doors. leave immediately, and report it to the authorities</string>
+    <string name="after3">• Turn on the radio. Don\'t use the phone unless it\'s an emergency.</string>
+    <string name="after4">• Stay out of damaged buildings.</string>
+    <string name="after5">• Be careful around broken glass and debris. Wear boots or sturdy shoes to keep from cutting your feet.</string>
+    <string name="after6">• Be careful of chimneys (they may fall on you).</string>
+    <string name="after7">• Stay away from beaches. Tsunamis and seiches sometimes hit after the ground has stopped shaking.</string>
+    <string name="after8">• Stay away from damaged areas.</string>
+    <string name="after9">• Expect aftershocks</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

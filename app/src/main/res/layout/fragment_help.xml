@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.olfu.olfudisasterapp.fragment.HelpFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Hotline"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Disaster Risk Reduction And Management Office" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="Call (02) 292 1405" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Bureau of Fire Protection (BFP)" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="352-3000 locals 232\n292-35-19" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Valenzuela City Emergency Hospital" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="Call 352-6000" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Rivers and Waterways Management Office (RWMO" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="352-2000 local 2103\n432-26-78" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="16dp"
+        android:text="Valenzuela Rescue Team" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="292-1405\n352-2000 loc. 2116/2112\n0999-744 1692\n0915-259 8376" />
+
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Philippine Red Cross - Valenzuela City Chapter" />
+
+    <com.olfu.olfudisasterapp.widgets.TextViewMed
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="Call 432-0273" />
+</LinearLayout>

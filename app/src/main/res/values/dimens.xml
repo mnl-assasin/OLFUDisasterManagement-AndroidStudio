@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="marginBottom">8dp</dimen>
+    <dimen name="btn_corners">4dp</dimen>
+    <dimen name="et_corners">10dp</dimen>
+
+    <dimen name="menu_height">50dp</dimen>
+    <dimen name="menu_big">70dp</dimen>
+
+
+</resources>

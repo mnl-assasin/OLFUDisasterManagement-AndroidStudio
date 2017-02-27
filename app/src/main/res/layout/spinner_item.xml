@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.moneyme.moneymeapp.widgets.TextViewRoman xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:textColor="@color/colorPrimaryText">
+
+</com.moneyme.moneymeapp.widgets.TextViewRoman>

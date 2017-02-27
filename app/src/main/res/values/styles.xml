@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:textColorSecondary">@color/colorText</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
+    <style name="TextInputStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/colorSecondaryText</item>
+        <item name="colorAccent">@color/colorPrimaryText</item>
+    </style>
+
+</resources>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.olfu.olfudisasterapp.widgets.TextViewMed
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/precaution_headline"
+                android:textAppearance="?android:textAppearanceLarge" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewMed
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/before_heading"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/before" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/before2" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/before3" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/before4" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/before5" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/before6" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/before7" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewMed
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/during_heading"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/during" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/during2" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/during3" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/during4" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/during5" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/during6" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewMed
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/after_heading"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after2" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after3" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after4" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after5" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after6" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after7" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after8" />
+
+            <com.olfu.olfudisasterapp.widgets.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/after9" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
