@@ -1,13 +1,109 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.olfu.olfudisasterapp.fragment.AccountInfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civProfilePic"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="2dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            android:src="@drawable/img_profile" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilLastName"
+            style="@style/TextInputStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <com.olfu.olfudisasterapp.widgets.EditTextRoman
+                android:id="@+id/etLastName"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilFirstName"
+            style="@style/TextInputStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <com.olfu.olfudisasterapp.widgets.EditTextRoman
+                android:id="@+id/etFirstName"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilContactNum"
+            style="@style/TextInputStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <com.olfu.olfudisasterapp.widgets.EditTextRoman
+                android:id="@+id/etContactNum"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/contact_num"
+                android:inputType=""
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilCourse"
+            style="@style/TextInputStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/actCourse"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/course"
+                android:inputType=""
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <com.olfu.olfudisasterapp.widgets.ButtonMed
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_default_selector"
+            android:text="Save Information"
+            android:textAllCaps="false"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@drawable/button_text_default_selector" />
+
+
+    </LinearLayout>
+</ScrollView>
+

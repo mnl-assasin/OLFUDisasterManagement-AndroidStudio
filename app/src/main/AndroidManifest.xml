@@ -3,7 +3,10 @@
     package="com.olfu.olfudisasterapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +18,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.WelcomeActivity" />
@@ -39,13 +42,14 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.AnnouncementInfoActivity" />
         <activity android:name=".activity.DisasterInfoActivity" />
         <activity android:name=".activity.SafeZoneBuildingActivity" />
-        <activity android:name=".activity.PrecautionEarthquakeActivity"></activity>
+        <activity android:name=".activity.PrecautionEarthquakeActivity" />
+        <activity android:name=".activity.EmergencyActivity"></activity>
     </application>
 
 </manifest>
