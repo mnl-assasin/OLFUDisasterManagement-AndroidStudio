@@ -100,7 +100,7 @@ public class AddInfoActivity extends BaseActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
-
+        setTitle("Additional Information");
     }
 
 
@@ -343,6 +343,7 @@ public class AddInfoActivity extends BaseActivity {
                 finish();
             }
         });
+        builder.show();
     }
 
     @Override

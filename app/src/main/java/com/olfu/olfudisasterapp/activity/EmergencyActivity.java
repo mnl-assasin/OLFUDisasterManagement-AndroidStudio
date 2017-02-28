@@ -74,7 +74,8 @@ public class EmergencyActivity extends BaseActivity {
 
     private void initToolbar() {
         setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Report an Emergency");
     }
 
     private void initListener() {
@@ -232,6 +233,7 @@ public class EmergencyActivity extends BaseActivity {
                 finish();
             }
         });
+         builder.show();
     }
 
     @Override

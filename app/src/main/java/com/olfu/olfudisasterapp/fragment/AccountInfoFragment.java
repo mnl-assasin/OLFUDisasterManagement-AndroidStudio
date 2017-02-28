@@ -29,7 +29,9 @@ import com.olfu.olfudisasterapp.data.EZSharedPreferences;
 import com.olfu.olfudisasterapp.util.FileHelper;
 import com.olfu.olfudisasterapp.widgets.ButtonMed;
 import com.olfu.olfudisasterapp.widgets.EditTextRoman;
+import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -73,6 +75,8 @@ public class AccountInfoFragment extends BaseFragment {
     @Bind(R.id.btnSignup)
     ButtonMed btnSignup;
 
+
+    int accountType;
     int course = -1;
 
     Uri imageUri = null;
@@ -106,12 +110,20 @@ public class AccountInfoFragment extends BaseFragment {
         AccountInformation info = EZSharedPreferences.getAccountInfo(getActivity());
         String firstName = info.getFirstName();
         String lastName = info.getLastName();
-        int course = info.getCourse();
+        int course = info.getCourse() - 1;
         String contactNum = info.getContactNum();
+        String imageUrl = info.getProfilePicture();
 
+        Picasso.with(getActivity()).load(imageUrl).placeholder(R.drawable.img_profile).into(civProfilePic);
+        accountType = EZSharedPreferences.getIntValue(getActivity(), EZSharedPreferences.KEY_USERTYPE);
         etFirstName.setText(firstName);
         etLastName.setText(lastName);
-        actCourse.setText(list.get(course - 1));
+
+        if (accountType == Const.TYPE_STUDENT)
+            actCourse.setText(list.get(course));
+        else
+            tilCourse.setVisibility(View.GONE);
+
         etContactNum.setText(contactNum);
 
 
@@ -242,7 +254,7 @@ public class AccountInfoFragment extends BaseFragment {
             isValid = false;
         }
 
-        if (course == -1) {
+        if (course == -1 && accountType == Const.TYPE_STUDENT) {
             tilCourse.setError("Enter your Course");
             isValid = false;
         }
@@ -271,22 +283,35 @@ public class AccountInfoFragment extends BaseFragment {
                 stopProgressDialog();
                 if (response.isSuccessful()) {
                     Log.d(TAG, "Update user successful");
-                    reportResult("Update user successful");
+                    reportResult();
                 } else {
                     Log.d(TAG, "Update user failed");
-                    reportResult("Update user failed");
+                    reportFail("Update user failed");
                 }
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Log.d(TAG, "Update user onFailure");
-                reportResult("Something went wrong please try again...");
+                reportFail("Something went wrong please try again...");
             }
         });
     }
 
-    private void reportResult(String message) {
+    private void reportResult() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Update user successful");
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+
+            }
+        });
+        builder.show();
+    }
+
+    private void reportFail(String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(message);
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -294,9 +319,48 @@ public class AccountInfoFragment extends BaseFragment {
             public void onClick(DialogInterface dialog, int which) {
                 initData();
                 dialog.dismiss();
-
             }
         });
+        builder.show();
     }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if ((requestCode == Const.REQUEST_PICK_IMAGE || requestCode == Const.REQUEST_TAKE_IMAGE) && resultCode == getActivity().RESULT_OK && data != null && data.getData() != null) {
+            Uri uri = data.getData();
+
+            File f = new File(uri.getPath());
+            File f2 = new File(uri.toString());
+            Log.d(TAG, f.getAbsolutePath() + " : " + f2.getAbsolutePath());
+
+            imageUri = uri;
+            String path = FileHelper.getRealPathFromURI(getActivity(), uri);
+            Log.d(TAG, "Image Path: " + path);
+            Picasso.with(getActivity()).load(uri).into(civProfilePic);
+        }
+
+    }
+
+
+    //    @Override
+//     void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if ((requestCode == Const.REQUEST_PICK_IMAGE || requestCode == Const.REQUEST_TAKE_IMAGE) && resultCode == RESULT_OK && data != null && data.getData() != null) {
+//            Uri uri = data.getData();
+//
+//            File f = new File(uri.getPath());
+//            File f2 = new File(uri.toString());
+//            Log.d(TAG, f.getAbsolutePath() + " : " + f2.getAbsolutePath());
+//
+//            imageUri = uri;
+//            String path = FileHelper.getRealPathFromURI(getActivity().this, uri);
+//            Log.d(TAG, "Image Path: " + path);
+//            Picasso.with(getActivity()).load(uri).into(civProfilePic);
+//        }
+//    }
 
 }

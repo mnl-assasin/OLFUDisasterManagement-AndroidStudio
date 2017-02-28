@@ -74,7 +74,7 @@ public class EZSharedPreferences {
     }
 
     public static String getValue(Context ctx, String KEY) {
-        return getSharedPref(ctx).getString(KEY, null);
+        return getSharedPref(ctx).getString(KEY, "");
     }
 
     public static int getIntValue(Context ctx, String KEY) {

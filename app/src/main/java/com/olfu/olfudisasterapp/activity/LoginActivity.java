@@ -61,7 +61,7 @@ public class LoginActivity extends BaseActivity {
     private void initToolbar() {
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorText));
-        toolbar.setTitle("Login");
+        setTitle("Login");
     }
 
     private void initListener() {

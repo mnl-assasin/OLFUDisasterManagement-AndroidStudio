@@ -72,7 +72,7 @@ public class SignupActivity extends AppCompatActivity {
     private void initToolbar() {
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorText));
-        toolbar.setTitle("Sign up");
+        setTitle("Sign up");
     }
 
     private void initData() {
