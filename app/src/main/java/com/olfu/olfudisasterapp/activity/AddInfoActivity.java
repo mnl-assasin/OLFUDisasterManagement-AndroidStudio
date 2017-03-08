@@ -1,38 +1,51 @@
 package com.olfu.olfudisasterapp.activity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 
 import com.olfu.olfudisasterapp.R;
 import com.olfu.olfudisasterapp.adapter.ACTAdapter;
+import com.olfu.olfudisasterapp.api.ApiClient;
+import com.olfu.olfudisasterapp.api.ApiInterface;
+import com.olfu.olfudisasterapp.builder.ToastBuilder;
 import com.olfu.olfudisasterapp.data.Const;
+import com.olfu.olfudisasterapp.util.FileHelper;
 import com.olfu.olfudisasterapp.widgets.ButtonMed;
 import com.olfu.olfudisasterapp.widgets.EditTextRoman;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class AddInfoActivity extends AppCompatActivity {
+public class AddInfoActivity extends BaseActivity {
 
     String TAG = AddInfoActivity.class.getSimpleName();
 
@@ -67,6 +80,7 @@ public class AddInfoActivity extends AppCompatActivity {
     String email;
     String username;
     String password;
+    int course = -1;
 
     Uri imageUri = null;
 
@@ -86,7 +100,7 @@ public class AddInfoActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
-
+        setTitle("Additional Information");
     }
 
 
@@ -154,6 +168,15 @@ public class AddInfoActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        actCourse.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d(TAG, "Position: " + position);
+                course = position + 1;
+                Log.d(TAG, "course: " + course);
+            }
+        });
     }
 
     @OnClick({R.id.civProfilePic, R.id.btnSignup})
@@ -209,6 +232,118 @@ public class AddInfoActivity extends AppCompatActivity {
 
     private void onSignupClick() {
 
+        /**
+         * email
+         * username
+         * passsword
+         * accountType
+         * course
+         */
+        String lName = etLastName.getText().toString().trim();
+        String fName = etFirstName.getText().toString().trim();
+        String mName = "";
+        String contactNum = etContactNum.getText().toString().trim();
+        String studNum = etStudNum.getText().toString().trim();
+
+        boolean isValid = true;
+
+        if (lName.equals("")) {
+            tilLastName.setError("Enter your Last Name");
+            isValid = false;
+        }
+
+        if (fName.equals("")) {
+            tilFirstName.setError("Enter your First Name");
+            isValid = false;
+        }
+
+        if (contactNum.equals("")) {
+            tilContactNum.setError("Enter your Contact Number");
+            isValid = false;
+        }
+
+        if (studNum.equals("")) {
+            tilStudNum.setError("Enter your Student Number");
+            isValid = false;
+        }
+
+        if (course == -1 && accountType == Const.TYPE_STUDENT) {
+            tilCourse.setError("Enter your Course");
+            isValid = false;
+        }
+
+        if (isValid) {
+            Log.d(TAG, "Last Name: " + lName);
+            Log.d(TAG, "Middle Name: " + mName);
+            Log.d(TAG, "First Name: " + fName);
+            Log.d(TAG, "Contact Num: " + contactNum);
+            Log.d(TAG, "Student Num: " + studNum);
+            Log.d(TAG, "Course: " + course);
+            Log.d(TAG, "Email: " + email);
+            Log.d(TAG, "Username: " + username);
+            Log.d(TAG, "Password: " + password);
+            Log.d(TAG, "AccountType: " + accountType);
+
+            HashMap<String, RequestBody> map = new HashMap<>();
+            map.put(Const.BODY_STUD_ID, FileHelper.createPartFromString(studNum));
+            map.put(Const.BODY_USERNAME, FileHelper.createPartFromString(username));
+            map.put(Const.BODY_PASSWORD, FileHelper.createPartFromString(password));
+            map.put(Const.BODY_COURSE, FileHelper.createPartFromString(String.valueOf(course)));
+            map.put(Const.BODY_EMAIL, FileHelper.createPartFromString(email));
+            map.put(Const.BODY_LASTNAME, FileHelper.createPartFromString(lName));
+            map.put(Const.BODY_FIRSTNAME, FileHelper.createPartFromString(fName));
+            map.put(Const.BODY_MIDDLENAME, FileHelper.createPartFromString(mName));
+            map.put(Const.BODY_CONTACTNUM, FileHelper.createPartFromString(contactNum));
+            map.put(Const.BODY_USERTYPE, FileHelper.createPartFromString(String.valueOf(accountType)));
+
+            MultipartBody.Part body = FileHelper.prepareFilePart(AddInfoActivity.this, Const.BODY_PROFILE_PICTURE, imageUri);
+            registerUser(map, body);
+        }
+    }
+
+    private void registerUser(HashMap<String, RequestBody> map, MultipartBody.Part body) {
+        startProgressDialog("Signing up...");
+        ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
+        Call<Void> call = api.postRegister(map, body);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                stopProgressDialog();
+
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "Sign up Successful");
+                    reportResult("Sign up successful");
+                } else {
+                    try {
+                        String error = response.errorBody().string().toString();
+                        Log.d(TAG, "Error: " + error);
+                        ToastBuilder.createLongToast(AddInfoActivity.this, "Something went wrong please try again");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                stopProgressDialog();
+                Log.d(TAG, "onFailure");
+            }
+        });
+    }
+
+    private void reportResult(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(AddInfoActivity.this);
+        builder.setMessage(message);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+            }
+        });
+        builder.show();
     }
 
     @Override
@@ -234,11 +369,11 @@ public class AddInfoActivity extends AppCompatActivity {
             Log.d(TAG, f.getAbsolutePath() + " : " + f2.getAbsolutePath());
 
             imageUri = uri;
-
+            String path = FileHelper.getRealPathFromURI(AddInfoActivity.this, uri);
+            Log.d(TAG, "Image Path: " + path);
             Picasso.with(getApplicationContext()).load(uri).into(civProfilePic);
-
-
         }
-
     }
+
+
 }

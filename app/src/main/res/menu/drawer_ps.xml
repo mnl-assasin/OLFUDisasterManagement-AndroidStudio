@@ -28,6 +28,10 @@
             android:id="@+id/menu_account_info"
             android:icon="@drawable/ic_account_info"
             android:title="@string/menu_account_info" />
-
     </group>
+
+    <item
+        android:id="@+id/menu_signout"
+        android:checkable="false"
+        android:title="Sign out" />
 </menu>

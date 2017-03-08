@@ -11,6 +11,7 @@
 
     <color name="divider">#BDBDBD</color>
     <color name="colorText">#fff</color>
+    <color name="fabColor">#ff1e1e</color>
 
     <color name="textLink">#038431</color>
     <color name="btnDefaultNormal">#038431</color>

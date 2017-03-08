@@ -1,47 +1,26 @@
-package com.olfu.olfudisasterapp.api;
-
-import com.google.gson.annotations.SerializedName;
+package com.olfu.olfudisasterapp.data;
 
 /**
- * Created by mykelneds on 25/02/2017.
+ * Created by mleano on 2/28/2017.
  */
 
-public class ResponseLogin {
+public class AccountInformation {
 
-    @SerializedName("id")
     private String id;
-
-    @SerializedName("user_number")
     private String userNum;
-
-    @SerializedName("course")
-    private String course;
-
-    @SerializedName("email")
+    private int course;
     private String email;
-
-    @SerializedName("last_name")
     private String lastName;
-
-    @SerializedName("first_name")
     private String firstName;
-
-    @SerializedName("middle_name")
     private String middleName;
-
-    @SerializedName("contact_number")
     private String contactNum;
-
-    @SerializedName("user_type")
-    private String userType;
-
-    @SerializedName("course_name")
+    private int userType;
     private String courseName;
-
-    @SerializedName("profile_picture_full")
     private String profilePicture;
 
-    public ResponseLogin(String id, String userNum, String course, String email, String lastName, String firstName, String middleName, String contactNum, String userType, String courseName, String profilePicture) {
+    public AccountInformation(String id, String userNum, int course, String email, String lastName,
+                              String firstName, String middleName, String contactNum, int userType,
+                              String courseName, String profilePicture) {
         this.id = id;
         this.userNum = userNum;
         this.course = course;
@@ -63,7 +42,7 @@ public class ResponseLogin {
         return userNum;
     }
 
-    public String getCourse() {
+    public int getCourse() {
         return course;
     }
 
@@ -87,7 +66,7 @@ public class ResponseLogin {
         return contactNum;
     }
 
-    public String getUserType() {
+    public int getUserType() {
         return userType;
     }
 

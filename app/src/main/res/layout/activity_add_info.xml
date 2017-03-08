@@ -123,6 +123,7 @@
                 android:id="@+id/btnSignup"
                 android:layout_width="@dimen/btn_width"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/button_default_selector"
                 android:text="@string/signup"
                 android:textAllCaps="false"

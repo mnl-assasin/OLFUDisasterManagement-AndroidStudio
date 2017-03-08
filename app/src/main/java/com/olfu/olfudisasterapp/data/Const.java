@@ -15,7 +15,7 @@ public class Const {
     public static final String STUDENT = "Student";
     public static final String ADMIN = "Admin";
 
-    public static final int TYPE_PARENT = 0;
+    public static final int TYPE_PARENT = 2;
     public static final int TYPE_STUDENT = 1;
 
     public static final String ANN_TTILE = "Title";
@@ -28,5 +28,27 @@ public class Const {
 
     public static final int REQUEST_PICK_IMAGE = 1;
     public static final int REQUEST_TAKE_IMAGE = 2;
+
+    public static final String BODY_STUD_ID = "student_id";
+    public static final String BODY_USERNAME = "username";
+    public static final String BODY_PASSWORD = "password";
+    public static final String BODY_COURSE = "course";
+    public static final String BODY_EMAIL = "email";
+    public static final String BODY_LASTNAME = "last_name";
+    public static final String BODY_FIRSTNAME = "first_name";
+    public static final String BODY_MIDDLENAME = "middle_name";
+    public static final String BODY_CONTACTNUM = "contact_number";
+    public static final String BODY_USERTYPE = "user_type";
+    public static final String BODY_PROFILE_PICTURE = "profile_picture";
+
+    public static final String REPORT_TITLE = "title";
+    public static final String REPORT_CONTENT = "content";
+    public static final String REPORT_USERID = "user_id";
+    public static final String REPORT_POSTIMAGE = "post_image";
+    public static final String REPORT_LATITUDE = "latitude";
+    public static final String REPORT_LONGITUDE = "longitude";
+
+
+
 }
 
