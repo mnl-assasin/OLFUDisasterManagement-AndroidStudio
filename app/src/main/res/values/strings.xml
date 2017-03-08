@@ -106,6 +106,11 @@
         <item>SLH Building</item>
         <item>SMDP Building</item>
     </string-array>
+    <string-array name="disaster_type">
+        <item>Fire</item>
+        <item>Typhoon</item>
+        <item>Earthquake</item>
+    </string-array>
 
     <string name="menu_annoucement">Announcement</string>
     <string name="menu_precautionary">Disaster Precautionary</string>
@@ -142,6 +147,28 @@
     <string name="after7">• Stay away from beaches. Tsunamis and seiches sometimes hit after the ground has stopped shaking.</string>
     <string name="after8">• Stay away from damaged areas.</string>
     <string name="after9">• Expect aftershocks</string>
+
+    <string name="fire_respond_alarm">Responding to the Alarm</string>
+    <string name="respond">• Stay calm. Do not panic when you hear the alarm. Also, it\'s important to stay quiet so you can hear any instructions.</string>
+    <string name="respond2">• Treat the alert is if it were a real fire. Though you may think the fire alarm is just for practice, you should always treat it as there actually is a fire. You have to practice the drill seriously to learn the proper procedure so that when a fire does happen, you won\'t panic.</string>
+    <string name="respond3">• Stop what you\'re doing. When you hear the alarm, you must stop anything you are doing at the time. Don\'t take time to finish a sentence on your paper or send an email. Don\'t take time to gather your things. Respond to the alarm immediately.</string>
+    <string name="respond4">• Start moving out of the building. Consider where the nearest exit is. Leave the room you are in going in that direction.</string>
+    <string name="respond5">• Close your door. If you are the last person in a room, close the door behind you. Make sure it doesn\'t lock, however</string>
+
+    <string name="fire_way_through">Making Your Way Through the Building</string>
+    <string name="way">• Move to the nearest exit. Go along the prescribed route for evacuating the building. If you don\'t know where the nearest exit is, look for "Exit" signs as you move down the hallways. These signs will usually be in red and sometimes will be lighted.</string>
+    <string name="way2">• Check doors for heat. When you\'re in a real fire, you must check doors for heat as you come up to them. Look for smoke coming under the door, and place your hand near the door to see if it is radiating heat. If you see neither of these signs, try lightly touching the door handle to see if it is hot. In a real fire, if you find any of these signs, you must go another route.</string>
+    <string name="way3">• Take the stairs. You should not use elevators during a fire drill. During a real fire, elevators are used by the firefighters to help fight the fire. Plus, elevators can be dangerous during a fire.</string>
+    <string name="way4">• Watch for "smoke" signs. Sometimes, the people doing the drill will put up "smoke" signs in certain hallways to simulate what happens in a real fire. If you see a smoke sign, you need to find an alternative route out of the building. </string>
+
+    <string name="fire_leave_building">Leaving The building</string>
+    <string name="leave">• Clear the sidewalks. Make sure to leave the sidewalks clear for the firefighters to do their work. If there are too many people clumped on the sidewalks, firefighters cannot get through.</string>
+    <string name="leave2">• Move to a safe distance. If there really is a fire, the building could eventually collapse. You should move a safe distance away from the building. Generally, across the street is fine.</string>
+    <string name="leave3">• Wait for the all-clear. Don\'t assume that because the fire alarm has stopped, you can re-enter the building. Wait until the firefighters or someone else in charge tells you it\'s fine to go back inside. Once you hear that, you can resume normal activities.</string>
+
+    <string name="flood">• Get out of low areas that may be subject to flooding.</string>
+    <string name="flood2">• Avoid already-flooded areas and do not attempt to cross flowing water.</string>
+    <string name="flood3">• Stay away from power lines and electrical wires.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

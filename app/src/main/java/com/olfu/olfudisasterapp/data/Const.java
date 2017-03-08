@@ -47,6 +47,7 @@ public class Const {
     public static final String REPORT_POSTIMAGE = "post_image";
     public static final String REPORT_LATITUDE = "latitude";
     public static final String REPORT_LONGITUDE = "longitude";
+    public static final String REPORT_CATEGORY = "category";
 
 
 

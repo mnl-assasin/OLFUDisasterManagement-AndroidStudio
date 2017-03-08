@@ -49,7 +49,9 @@
         <activity android:name=".activity.DisasterInfoActivity" />
         <activity android:name=".activity.SafeZoneBuildingActivity" />
         <activity android:name=".activity.PrecautionEarthquakeActivity" />
-        <activity android:name=".activity.EmergencyActivity"></activity>
+        <activity android:name=".activity.EmergencyActivity" />
+        <activity android:name=".activity.PrecautionaryFireActivity" />
+        <activity android:name=".activity.PrecautionaryFloodActivity"></activity>
     </application>
 
 </manifest>

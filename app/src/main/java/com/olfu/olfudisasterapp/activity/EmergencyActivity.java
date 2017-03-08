@@ -13,10 +13,13 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.olfu.olfudisasterapp.R;
+import com.olfu.olfudisasterapp.adapter.ACTAdapter;
 import com.olfu.olfudisasterapp.api.ApiClient;
 import com.olfu.olfudisasterapp.api.ApiInterface;
 import com.olfu.olfudisasterapp.builder.ToastBuilder;
@@ -29,7 +32,10 @@ import com.olfu.olfudisasterapp.widgets.EditTextRoman;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -60,6 +66,12 @@ public class EmergencyActivity extends BaseActivity {
     ButtonMed btnSubmit;
 
     Uri imageUri = null;
+    @Bind(R.id.actDisasterType)
+    AutoCompleteTextView actDisasterType;
+    @Bind(R.id.tilDisasterType)
+    TextInputLayout tilDisasterType;
+
+    int disasterType = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +80,7 @@ public class EmergencyActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         initToolbar();
+        initData();
         initListener();
 
     }
@@ -76,6 +89,14 @@ public class EmergencyActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Report an Emergency");
+    }
+
+    private void initData() {
+
+        List<String> list = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.disaster_type)));
+        ACTAdapter adapter = new ACTAdapter(EmergencyActivity.this, R.layout.act_item, list);
+        actDisasterType.setAdapter(adapter);
+
     }
 
     private void initListener() {
@@ -93,6 +114,23 @@ public class EmergencyActivity extends BaseActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 tilContent.setErrorEnabled(false);
                 return false;
+            }
+        });
+
+        actDisasterType.setOnKeyListener(null);
+        actDisasterType.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                ((AutoCompleteTextView) view).showDropDown();
+                tilDisasterType.setErrorEnabled(false);
+                return false;
+            }
+        });
+
+        actDisasterType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                disasterType = i;
             }
         });
 
@@ -172,7 +210,12 @@ public class EmergencyActivity extends BaseActivity {
         }
 
         if (content.equals("")) {
-            tilContent.setError("Insert descrption of your report");
+            tilContent.setError("Insert description of your report");
+            isValid = false;
+        }
+
+        if (disasterType == -1) {
+            tilDisasterType.setError("Please select a disaster type");
             isValid = false;
         }
 
@@ -184,7 +227,7 @@ public class EmergencyActivity extends BaseActivity {
             map.put(Const.REPORT_USERID, FileHelper.createPartFromString(userId));
             map.put(Const.REPORT_LATITUDE, FileHelper.createPartFromString(String.valueOf(latitude)));
             map.put(Const.REPORT_LONGITUDE, FileHelper.createPartFromString(String.valueOf(longitude)));
-
+            map.put(Const.REPORT_CATEGORY, FileHelper.createPartFromString(String.valueOf(disasterType)));
 
             MultipartBody.Part body = FileHelper.prepareFilePart(EmergencyActivity.this, Const.REPORT_POSTIMAGE, imageUri);
             postReport(map, body);
@@ -223,7 +266,7 @@ public class EmergencyActivity extends BaseActivity {
         });
     }
 
-     private void reportResult(String message) {
+    private void reportResult(String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(EmergencyActivity.this);
         builder.setMessage(message);
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -233,7 +276,7 @@ public class EmergencyActivity extends BaseActivity {
                 finish();
             }
         });
-         builder.show();
+        builder.show();
     }
 
     @Override

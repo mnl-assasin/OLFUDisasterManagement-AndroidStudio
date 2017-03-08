@@ -11,6 +11,8 @@ import android.widget.ImageView;
 
 import com.olfu.olfudisasterapp.R;
 import com.olfu.olfudisasterapp.activity.PrecautionEarthquakeActivity;
+import com.olfu.olfudisasterapp.activity.PrecautionaryFireActivity;
+import com.olfu.olfudisasterapp.activity.PrecautionaryFloodActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -53,8 +55,10 @@ public class PrecautionaryFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivFire:
+                startActivity(new Intent(getActivity(), PrecautionaryFireActivity.class));
                 break;
             case R.id.ivFlood:
+                startActivity(new Intent(getActivity(), PrecautionaryFloodActivity.class));
                 break;
             case R.id.ivEarthquake:
                 startActivity(new Intent(getActivity(), PrecautionEarthquakeActivity.class));
