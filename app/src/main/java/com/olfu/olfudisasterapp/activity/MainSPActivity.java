@@ -100,6 +100,7 @@ public class MainSPActivity extends AppCompatActivity implements NavigationView.
 
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+
     }
 
     @Override
