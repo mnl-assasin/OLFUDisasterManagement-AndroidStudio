@@ -12,7 +12,8 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-    <TextView android:text="@string/lorem_long"
+    <TextView
+        android:text="@string/lorem_long"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp" />

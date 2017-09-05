@@ -4,8 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/windowBackground"
-    android:orientation="vertical" android:textSize="16sp"
-    android:padding="8dp" android:text="Sample text"
+    android:orientation="vertical"
+    android:textSize="16sp"
+    android:padding="8dp"
+    android:text="Sample text"
     android:textColor="@color/colorPrimaryText">
 
 </com.olfu.olfudisasterapp.widgets.TextViewRoman>
